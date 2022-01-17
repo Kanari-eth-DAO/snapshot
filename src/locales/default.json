@@ -168,7 +168,7 @@
     "votingSystem": "Voting system"
   },
   "proposals": {
-    "header": "Proposals",
+    "header": "Tweets",
     "new": "New proposal",
     "noProposals": "There aren't any proposals here yet!",
     "createProposal": "Create proposal",
