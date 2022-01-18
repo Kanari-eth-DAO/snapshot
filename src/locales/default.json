@@ -169,9 +169,9 @@
   },
   "proposals": {
     "header": "Tweets",
-    "new": "New proposal",
-    "noProposals": "There aren't any proposals here yet!",
-    "createProposal": "Create proposal",
+    "new": "New tweet",
+    "noProposals": "There aren't any tweets here yet!",
+    "createProposal": "Create tweet",
     "states": {
       "all": "All",
       "core": "Core",

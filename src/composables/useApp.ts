@@ -11,6 +11,7 @@ import { useDomain } from '@/composables/useDomain';
 import aliases from '@/../snapshot-spaces/spaces/aliases.json';
 import { useApolloQuery } from '@/composables/useApolloQuery';
 import { SPACE_SKIN_QUERY } from '@/helpers/queries';
+import { concatAST } from 'graphql';
 
 const state = reactive({
   init: false,
@@ -54,6 +55,8 @@ export function useApp() {
     const exploreObj: any = await fetch(
       `${import.meta.env.VITE_HUB_URL}/api/explore`
     ).then(res => res.json());
+    
+    console.log(exploreObj);
 
     exploreObj.spaces = Object.fromEntries(
       Object.entries(exploreObj.spaces).map(([id, space]: any) => {
@@ -67,8 +70,8 @@ export function useApp() {
 
         return [id, { id, ...space }];
       })
-    );
 
+    );
     explore.value = exploreObj;
     return;
   }
