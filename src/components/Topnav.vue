@@ -87,7 +87,7 @@ async function handleLogin(connector) {
             </UiButton>
             <a
               v-if="!domain"
-              href="https://twitter.com/SnapshotLabs"
+              href="https://twitter.com/kanariDAO"
               target="_blank"
               class="float-right ml-2 hidden sm:block"
             >

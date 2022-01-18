@@ -26,7 +26,7 @@ function changeLang() {
       <h3>{{ $t('about') }}</h3>
     </template>
     <div class="text-center mt-4 space-x-3">
-      <a href="https://twitter.com/SnapshotLabs" target="_blank">
+      <a href="https://twitter.com/kanariDAO" target="_blank">
         <Icon size="32" name="twitter" class="hover:opacity-80" />
       </a>
       <a href="https://discord.gg/snapshot" target="_blank">
