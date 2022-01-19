@@ -128,9 +128,9 @@
     "type": "Invalid type"
   },
   "create": {
-    "question": "Ask a question...",
+    "question": "What the next tweet is?",
     "categorie(s)": "Select up to 2 categorie(s)",
-    "content": "Tell more about your proposal (optional)",
+    "content": "Here goes the tweet...",
     "preview": "Preview",
     "choices": "Choices",
     "addChoice": "Add choice",

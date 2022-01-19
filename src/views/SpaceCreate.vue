@@ -45,7 +45,7 @@ const blockNumber = ref(-1);
 const bodyLimit = ref(14400);
 const preview = ref(false);
 const form = ref({
-  name: '',
+  name: 'What the next tweet will be?',
   body: '',
   choices: [],
   start: 0,
@@ -140,8 +140,11 @@ function setDate(ts) {
 }
 
 async function handleSubmit() {
+  // form.value.name='What the next tweet is?';
   form.value.snapshot = parseInt(form.value.snapshot);
+  
   form.value.choices = choices.value.map(choice => choice.text);
+  console.log('THIS IS' ,form.value.choices);
   form.value.metadata.network = props.space.network;
   form.value.metadata.strategies = props.space.strategies;
   form.value.start = props.space.voting?.delay
@@ -212,6 +215,7 @@ async function loadProposal() {
 onMounted(async () => {
   setPageTitle('page.title.space.create', { space: props.space.name });
   nameForm.value.focus();
+  // console.log(nameForm.value);
   addChoice(2);
 
   if (props.from) loadProposal();
