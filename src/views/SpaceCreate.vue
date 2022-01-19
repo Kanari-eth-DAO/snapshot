@@ -123,10 +123,18 @@ const isValid = computed(() => {
 const disableChoiceEdit = computed(() => form.value.type === 'basic');
 
 function addChoice(num) {
-  for (let i = 1; i <= num; i++) {
+  // for (let i = 1; i <= num; i++) {
+  //   counter.value++;
+  //   choices.value.push({ key: counter.value, text: '' });
+
+
+  // }
+    // for (let i = 1; i <= num; i++) {
     counter.value++;
-    choices.value.push({ key: counter.value, text: '' });
-  }
+    choices.value.push({ key: counter.value, text: 'I agree to post this tweet' });
+    counter.value++;
+    choices.value.push({ key: counter.value, text: 'I disagree to post this tweet' });
+  // }
 }
 
 function removeChoice(i) {
@@ -144,7 +152,7 @@ async function handleSubmit() {
   form.value.snapshot = parseInt(form.value.snapshot);
   
   form.value.choices = choices.value.map(choice => choice.text);
-  console.log('THIS IS' ,form.value.choices);
+  console.log('THIS IS' ,form.value);
   form.value.metadata.network = props.space.network;
   form.value.metadata.strategies = props.space.strategies;
   form.value.start = props.space.voting?.delay
@@ -335,26 +343,10 @@ watchEffect(() => {
                     {{ index + 1 }}
                   </span>
                 </template>
-                <template v-slot:info>
-                  <span
-                    v-if="!disableChoiceEdit"
-                    class="cursor-pointer"
-                    @click="removeChoice(index)"
-                  >
-                    <Icon name="close" size="12" />
-                  </span>
-                </template>
               </UiInput>
             </template>
           </draggable>
         </div>
-        <UiButton
-          v-if="!disableChoiceEdit"
-          @click="addChoice(1)"
-          class="block w-full"
-        >
-          {{ $t('create.addChoice') }}
-        </UiButton>
       </Block>
       <PluginSafeSnapConfig
         v-if="space?.plugins?.safeSnap"
