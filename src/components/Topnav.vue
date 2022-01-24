@@ -42,7 +42,7 @@ async function handleLogin(connector) {
               class="flex items-center"
               style="font-size: 24px; padding-top: 4px"
             >
-              snapshot
+              KanariDAO
             </router-link>
           </div>
           <div :key="web3.account">
