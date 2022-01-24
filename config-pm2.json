@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "yarn",
+            "script": "yarn dev",
+            "args" : "--host"
+        }
+    ]
+}
