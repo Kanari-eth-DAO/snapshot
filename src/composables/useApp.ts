@@ -55,7 +55,7 @@ export function useApp() {
     const exploreObj: any = await fetch(
       `${import.meta.env.VITE_HUB_URL}/api/explore`
     ).then(res => res.json());
-    
+
     console.log(exploreObj);
 
     exploreObj.spaces = Object.fromEntries(
@@ -70,7 +70,6 @@ export function useApp() {
 
         return [id, { id, ...space }];
       })
-
     );
     explore.value = exploreObj;
     return;

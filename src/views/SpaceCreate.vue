@@ -127,13 +127,18 @@ function addChoice(num) {
   //   counter.value++;
   //   choices.value.push({ key: counter.value, text: '' });
 
-
   // }
-    // for (let i = 1; i <= num; i++) {
-    counter.value++;
-    choices.value.push({ key: counter.value, text: 'I agree to post this tweet' });
-    counter.value++;
-    choices.value.push({ key: counter.value, text: 'I disagree to post this tweet' });
+  // for (let i = 1; i <= num; i++) {
+  counter.value++;
+  choices.value.push({
+    key: counter.value,
+    text: 'I agree to post this tweet'
+  });
+  counter.value++;
+  choices.value.push({
+    key: counter.value,
+    text: 'I disagree to post this tweet'
+  });
   // }
 }
 
@@ -150,9 +155,9 @@ function setDate(ts) {
 async function handleSubmit() {
   // form.value.name='What the next tweet is?';
   form.value.snapshot = parseInt(form.value.snapshot);
-  
+
   form.value.choices = choices.value.map(choice => choice.text);
-  console.log('THIS IS' ,form.value);
+  console.log('THIS IS', form.value);
   form.value.metadata.network = props.space.network;
   form.value.metadata.strategies = props.space.strategies;
   form.value.start = props.space.voting?.delay
