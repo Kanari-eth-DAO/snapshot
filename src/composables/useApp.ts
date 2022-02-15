@@ -53,7 +53,7 @@ export function useApp() {
 
   async function getExplore() {
     const exploreObj: any = await fetch(
-      `${import.meta.env.LOCALHOST_URL}/api/explore`
+      `${import.meta.env.VITE_HUB_URL}/api/explore`
     ).then(res => res.json());
 
     console.log(exploreObj);
